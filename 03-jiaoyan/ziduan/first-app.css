@@ -1,0 +1,22 @@
+.arcl{
+    width:218px;
+    height:21px;
+}
+span::before{
+    content:' *';
+    color:red;
+}
+.js{
+    width:66px;
+    height:26px;
+    margin-left:52px;
+}
+input,label,.js{
+    margin-bottom:10px
+}
+.tips{
+    margin-left:52px;
+    margin-bottom:-10px;
+    color:red;
+    display:none;
+}
