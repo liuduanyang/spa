@@ -20,36 +20,45 @@ window.onload=function(){
 
 function a(){
     if(!myHight.value){
+        tip3.style.display="none";
         tip1.style.display="block";
         myHight.focus();
+        return;
     }else{
         tip1.style.display="none";
     }
-    
-    // if(typeof(myHight.value)!==Number || myHight.value<0){
-    //     tip3.style.display="block";
-    //     myHight.focus();
-    // }else{
-    //     tip3.style.display="none";
-    // }
-}
 
-myHight.oninput=a;
-
-myHight.onblur=a;
-
-function b(){
-    if(!myWidth.value){
-        tip2.style.display="block";
-        myWidth.focus();
+    if(!(/^\de?\d*$/.test(myHight.value))){
+        tip3.style.display="block";
+        myHight.focus();
     }else{
-        tip2.style.display="none";
+        tip3.style.display="none";
     }
 }
 
-myWidth.oninput=b;
+function b(){
+    if(!myWidth.value){
+        tip4.style.display="none";
+        tip2.style.display="block";
+        myWidth.focus();
+        return;
+    }else{
+        tip2.style.display="none";
+    }
 
+    if(!(/^\de?\d*$/.test(myWidth.value))){
+        tip4.style.display="block";
+        myWidth.focus();
+    }else{
+        tip4.style.display="none";
+    }
+}
+
+myHight.oninput=a;
+myHight.onblur=a;
+myWidth.oninput=b;
 myWidth.onblur=b;
+
 
 var js=document.querySelector(".js");
 
